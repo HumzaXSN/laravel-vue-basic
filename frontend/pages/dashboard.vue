@@ -4,9 +4,9 @@
     <div>
       <button type="button" class="bg-red-700 text-white rouded p-3" @click="logout">Logout</button>
     </div>
-    <div class="flex place-items-center px-40 py-7">
-      <vue-good-table :columns="columns" :rows="todos" fixed-header="true" max-height="300px" :line-numbers="true"
-        :search-options="{
+    <client-only>
+      <div class="flex place-items-center px-40 py-7">
+        <vue-good-table :columns="columns" :rows="todos" max-height="300px" :line-numbers="true" :search-options="{
          enabled: true,
          placeholder: 'Search...',
         }" :pagination-options="{
@@ -24,9 +24,9 @@
           dropdownAllowAll: false,
         }" :select-options="{
           enabled: true,
-        }"
-        />
-    </div>
+        }" />
+      </div>
+    </client-only>
   </div>
 </template>
 
@@ -52,7 +52,7 @@
       async logout() {
         await this.$auth.logout();
         this.$router.push('/login');
-      }
+      },
     },
     async fetch() {
       try {
