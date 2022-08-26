@@ -4,8 +4,8 @@
       <NuxtLink class="p-2 bg-red-600 text-white rounded" v-if="$auth.loggedIn == true" to="/">HOME</NuxtLink>
       <NuxtLink class="p-2 bg-red-600 text-white rounded" v-if="$auth.loggedIn != true" to="/login">Login</NuxtLink>
       <NuxtLink class="p-2 bg-red-600 text-white rounded" v-if="$auth.loggedIn != true" to="/register">Register</NuxtLink>
-      <NuxtLink class="p-2 bg-red-600 text-white rounded" v-if="$auth.loggedIn == true" to="/dashboard">Dashboard
-      </NuxtLink>
+      <NuxtLink class="p-2 bg-red-600 text-white rounded" v-if="$auth.loggedIn == true" to="/dashboard">Dashboard</NuxtLink>
+      <NuxtLink class="p-2 bg-red-600 text-white rounded" v-if="$auth.loggedIn == true" to="/users">Users</NuxtLink>
     </div>
     <Nuxt />
   </div>
